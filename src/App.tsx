@@ -3,6 +3,7 @@ import Layout from "./layouts/layout";
 import MainLayout from "./layouts/main-layout";
 import ProtectedRoute from "./layouts/protected-route";
 import { HomePage, SignInPage, SignUpPage } from "./routes";
+import { CreateEditPage } from "./routes/create-edit-page";
 import { Dashboard } from "./routes/dashboard";
 import { Generate } from "./views/generate";
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
         >
           <Route path="/generate" element={<Generate />}>
             <Route index element={<Dashboard />} />
+            <Route path=":interviewId" element={<CreateEditPage />} />
           </Route>
         </Route>
       </Routes>
