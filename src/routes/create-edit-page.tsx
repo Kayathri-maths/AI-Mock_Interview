@@ -1,4 +1,5 @@
 import { db } from "@/config/firebase.config";
+import { FormMockInterview } from "@/forms/form-mock-interview";
 import { Interview } from "@/types";
 import { doc, getDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
@@ -22,5 +23,9 @@ export const CreateEditPage = () => {
     };
     fetchInterview();
   }, [interviewId]);
-  return <div>CreateEditPage : {interviewId}</div>;
+  return (
+    <div className="my-4 flex-col w-full">
+      <FormMockInterview initialData={interview} />
+    </div>
+  );
 };
