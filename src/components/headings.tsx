@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-interface HeadingProps {
+interface HeadingsProps {
   title: string;
   description?: string;
   isSubHeading?: boolean;
@@ -9,8 +9,8 @@ interface HeadingProps {
 export const Headings = ({
   title,
   description,
-  isSubHeading,
-}: HeadingProps) => {
+  isSubHeading = false,
+}: HeadingsProps) => {
   return (
     <div>
       <h2
